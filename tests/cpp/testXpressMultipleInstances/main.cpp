@@ -7,13 +7,11 @@ int main(int argc, char** argv){
 	double objValue_l = 0.;
 	{
 		MPSolver * solver = new MPSolver("simple_lp_program", MPSolver::XPRESS_LINEAR_PROGRAMMING);
-		VLOG(1) << "testVlog" << std::endl;
 		auto x = solver->MakeNumVar(0., 5., "testVar");
 		
 		MPObjective* const objective = solver->MutableObjective();
 		objective->SetCoefficient(x, 1.);
 		objective->SetMaximization();
-		solver->set_time_limit(1000.);
 		
 		solver->Solve();
 		
@@ -29,7 +27,6 @@ int main(int argc, char** argv){
 			MPObjective* const objective = solver->MutableObjective();
 			objective->SetCoefficient(x, 1.);
 			objective->SetMaximization();
-			solver->set_time_limit(1000.);
 			
 			solver->Solve();
 			

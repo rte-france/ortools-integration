@@ -10,7 +10,7 @@ int main(int argc, char** argv){
 	MPObjective* const objective = solver->MutableObjective();
 	objective->SetCoefficient(x, 1.);
 	objective->SetMaximization();
-	solver->set_time_limit(1000);
+	objective->SetOffset(3.0);
 	
 	solver->Solve();
 
