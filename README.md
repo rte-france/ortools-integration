@@ -3,7 +3,7 @@
 ### Pré-requis
 - Visual Studio 15 2017 Win64
 - cmake 3.10
-- git (& git-bash)
+- git 2.8 (& git-bash)
 - ...
 
 ### Procédure
@@ -23,3 +23,19 @@ Et après, pour compiler les tests C++ et les lancer :
 ```bash
 bash subrepos/scripts/Windows/4_OR-Tools_tests.sh
 ```
+## Pour pouvoir contribuer sur les subrepos (dont le fork ortools de RTE)
+Le plus simple est "d'installer" la fonctionnalité subrepo. Il s'agit simplement de scripts qui ajoute des fonctionnalités à git.
+L'installation est très simple.
+```bash
+git clone https://github.com/ingydotnet/git-subrepo /path/to/git-subrepo
+echo 'source /path/to/git-subrepo/.rc' >> ~/.bashrc
+source ~/.bashrc
+```
+Les commandes sont relativements instinctives par rapport à git.  
+Après avoir commité des modifications dans subrepos/OR-Tools, on peut les pusher avec
+```bash
+git subrepo push subrepos/OR-Tools
+```
+Plus de détails ici :  
+https://github.com/ingydotnet/git-subrepo
+
