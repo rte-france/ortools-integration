@@ -7,6 +7,10 @@ if [ "${ORTOOLS_CPLEX_SWITCH}x" == "ONx" ]; then
 	lookForLib "${CPLEXDIR}" "Cplex lib" "/bin/x64_win64/cplex1270.dll" ; fi
 if [ "${ORTOOLS_XPRESS_SWITCH}x" == "ONx" ]; then
 	lookForLib "${XPRESSDIR}" "Xpress lib" "/lib/xprs.lib" ; fi
+	
+if [ ! -d "${ORTOOLS_GIT_PATH}" ]; then
+	git clone ${ORTOOLS_REPO} -b ${ORTOOLS_BRANCH} "${ORTOOLS_GIT_PATH}"
+fi
 
 if [ "${ORTOOLS_BUILD_DEPS}x" == "OFFx" ]
 then
@@ -18,7 +22,6 @@ then
 		cd -
 	fi
 fi
-echo "ORTOOLS_SRC_PATH : ${ORTOOLS_SRC_PATH}"
 mkdir -p ${ORTOOLS_BUILD_PATH}
 cd ${ORTOOLS_BUILD_PATH}
 #configuring and building dependencies if needed
@@ -40,7 +43,7 @@ cmake \
 
 lookForLib "${ORTOOLS_DEPENDENCIES_INSTALL_PATH}" "Ortools pre-build dependencies" "lib/libCbc.a"
 
-fixTemplateVisualStudioProblem
+#fixTemplateVisualStudioProblem
 
 cmake --build ${ORTOOLS_BUILD_PATH} --config Release --target install -- -j $(nproc)
 
@@ -48,5 +51,5 @@ if [ "${ORTOOLS_TESTING_SWITCH}x" == "ONx" ]; then
 	export PATH="$PATH:${ORTOOLS_DEPENDENCIES_INSTALL_PATH}/bin/:${CPLEXDIR}/bin/x64_win64/:${SIRIUS_INSTALL_DIR}/lib/Release/"
 
 	cmake --build ${ORTOOLS_BUILD_PATH} --config Release
-	cmake --build ${ORTOOLS_BUILD_PATH} --config Release --target RUN_TESTS
+	cmake --build ${ORTOOLS_BUILD_PATH} --config Release --target run_tests
 fi
