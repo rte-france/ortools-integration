@@ -2,6 +2,11 @@ source $(dirname $0)/config.sh
 
 if [ "${ORTOOLS_SIRIUS_SWITCH}x" == "ONx" ]
 then
+
+	if [ ! -d "${SIRIUS_GIT_PATH}" ]; then
+		git clone ${SIRIUS_REPO} -b ${SIRIUS_BRANCH} "${SIRIUS_GIT_PATH}"
+	fi
+	
 	mkdir -p ${SIRIUS_BUILD_DIR}
 	cd ${SIRIUS_BUILD_DIR}
 	#configuring
