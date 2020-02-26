@@ -36,7 +36,7 @@ if [ "${ORTOOLS_CPLEX_SWITCH}x" == "ONx" ]; then
 # Sirius variables
 export SIRIUS_GIT_PATH="$PWD/subrepos/Sirius"
 export SIRIUS_REPO="https://github.com/rte-france/temp-pne.git"
-export SIRIUS_BRANCH="pne_from_antares"
+export SIRIUS_BRANCH="metrix"
 
 export SIRIUS_SRC_PATH="$PWD/subrepos/Sirius/src"
 export SIRIUS_BUILD_DIR="$PWD/subrepos/Sirius/build"

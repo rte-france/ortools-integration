@@ -6,7 +6,7 @@ if [ "${ORTOOLS_SIRIUS_SWITCH}x" == "ONx" ]; then
 if [ "${ORTOOLS_CPLEX_SWITCH}x" == "ONx" ]; then
 	lookForLib "${CPLEXDIR}" "Cplex lib" "/bin/x64_win64/cplex1270.dll" ; fi
 if [ "${ORTOOLS_XPRESS_SWITCH}x" == "ONx" ]; then
-	lookForLib "${XPRESSDIR}" "Xpress lib" "/lib/xprs.lib" ; fi
+	lookForLib "${XPRESSDIR}" "Xpress lib" "/lib/xprs.so" ; fi
 	
 if [ ! -d "${ORTOOLS_GIT_PATH}" ]; then
 	git clone ${ORTOOLS_REPO} -b ${ORTOOLS_BRANCH} "${ORTOOLS_GIT_PATH}"

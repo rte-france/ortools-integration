@@ -7,8 +7,6 @@ then
 		git clone ${SIRIUS_REPO} -b ${SIRIUS_BRANCH} "${SIRIUS_GIT_PATH}"
 	fi
 	
-	mkdir -p ${SIRIUS_BUILD_DIR}
-	cd ${SIRIUS_BUILD_DIR}
 	#configuring
 	cmake \
 		-G "${CHOSEN_COMPILER}" \
