@@ -1,4 +1,4 @@
-if [ "x${OSTYPE}" == "linux-gnu" ]; then
+if [ "x${OSTYPE}" == "xlinux-gnu" ]; then
 	export WINDOWS_FLAG="OFF"
 	export CHOSEN_COMPILER="Unix Makefiles"
 	
