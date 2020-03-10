@@ -25,6 +25,7 @@ make install
 scl enable devtoolset-7 bash
 
 ### Clone du projet d'intégration
+rm -rf ortools-integration
 git clone https://github.com/rte-france/ortools-integration.git -b evol-cmakes
 cd ortools-integration
 
