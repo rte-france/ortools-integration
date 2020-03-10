@@ -2,3 +2,4 @@
 
 using operations_research::MPSolver;
 MPSolver * createSimpleLP(double targetObjectiveValue);
+MPSolver * createLP1();
