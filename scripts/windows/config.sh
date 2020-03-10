@@ -1,4 +1,4 @@
-if [ "x${OSTYPE}" == "linux-gnu" ]; then
+if [ "x${OSTYPE}" == "xlinux-gnu" ]; then
 	export WINDOWS_FLAG="OFF"
 	export CHOSEN_COMPILER="Unix Makefiles"
 	
@@ -7,7 +7,7 @@ else
 	export WINDOWS_FLAG="ON"
 	export CHOSEN_COMPILER="Visual Studio 15 2017 Win64"
 	
-	export ORTOOLS_BUILD_DEPS="OFF"
+	export ORTOOLS_BUILD_DEPS="ON"
 fi
 
 # OR-Tools flags
@@ -16,7 +16,7 @@ export ORTOOLS_PYTHON_SWITCH="OFF" # build python version of OR-Tools
 export ORTOOLS_TESTING_SWITCH="OFF" # build and run tests after building OR-Tools
 
 export ORTOOLS_SIRIUS_SWITCH="ON" # activate Sirius interface
-export ORTOOLS_XPRESS_SWITCH="ON" # activate Xpress interface
+export ORTOOLS_XPRESS_SWITCH="OFF" # activate Xpress interface
 export ORTOOLS_CPLEX_SWITCH="OFF"  # activate Cplex interface
 
 # Pathes to extern solver installs
