@@ -6,10 +6,10 @@ node('slave-rte-math-prog-linux'){
     // def fichier = 'PNE_STANDALONE'
     
 
-    // // Récupération des sources
-    // stage('Checkout'){
-    //     checkout scm
-    // }
+    // Récupération des sources
+    stage('Checkout'){
+        checkout scm
+    }
 
     // // Compilation
     // stage('Compilation'){
