@@ -52,7 +52,7 @@ cmake --build buildLinux/ --config Release -j4
 
 # Pour Windows ( !!! __WORK IN PROGRESS__ !!!)
 ## __A résoudre__
-fixTemplate pour visual 2017
+fixTemplate pour visual 2017  
 link gflags (cherche gflags_nothreads_static.lib sans le chemin, alors qu'il a déjà ${chemin}/gflags_static.lib)
 
 ## Pré-requis
