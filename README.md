@@ -26,11 +26,11 @@ scl enable devtoolset-7 bash
 
 ### Clone du projet d'intégration
 rm -rf ortools-integration
-git clone https://github.com/rte-france/ortools-integration.git -b evol-cmakes
+git clone https://github.com/rte-france/ortools-integration.git -b unification_2020
 cd ortools-integration
 
 ### Configuration et build + install de Sirius
-git clone https://github.com/rte-france/temp-pne.git -b metrix Sirius
+git clone https://github.com/rte-france/temp-pne.git -b unification_2020 Sirius
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="install" -B Sirius/buildLinux -S Sirius/src
 cmake --build Sirius/buildLinux/ --config Release --target install -j4
 
@@ -87,4 +87,3 @@ cmake --build buildLinux/ --config Release -j4
 ### Lancement des tests d'intégration
 (cd buildLinux; ctest -C Release -V)
 ```
-
