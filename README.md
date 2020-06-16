@@ -72,8 +72,8 @@ cd ortools-integration
 
 ### Configuration et build + install de Sirius
 git clone https://github.com/rte-france/temp-pne.git -b metrix Sirius
-cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="install" -B Sirius/buildLinux -S Sirius/src
-cmake --build Sirius/buildLinux/ --config Release --target install -j4
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="install" -B Sirius/buildWindows -S Sirius/src -G "Visual Studio 15 2017 Win64"
+cmake --build Sirius/buildWindows/ --config Release --target install -j4
 
 ### Configuration et build + install d'ortools
 git clone https://github.com/rte-france/or-tools.git -b rte_dev_sirius or-tools
