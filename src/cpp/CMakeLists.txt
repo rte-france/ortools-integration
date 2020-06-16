@@ -32,8 +32,8 @@ function(createCppTest PACKAGE_NAME testName)
 	target_link_libraries(${EXECUTABLE_NAME} PUBLIC ortools::ortools)
 
 	if (USE_SIRIUS)
-		target_compile_definitions(${EXECUTABLE_NAME} PUBLIC USE_SIRIUS)
-		target_link_libraries(${EXECUTABLE_NAME} PUBLIC bib_solveur)
+		#target_compile_definitions(${EXECUTABLE_NAME} PUBLIC USE_SIRIUS)
+		target_link_libraries(${EXECUTABLE_NAME} PUBLIC sirius_solver)
 	endif()
 	
 	add_test(NAME "${EXECUTABLE_NAME}" COMMAND ${EXECUTABLE_NAME})
@@ -56,3 +56,4 @@ ENDIF()
 if (USE_SIRIUS)
 	GENERATE_CPP_TESTS(Sirius)
 ENDIF()
+

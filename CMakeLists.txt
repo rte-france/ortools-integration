@@ -12,7 +12,7 @@ if(USE_XPRESS)
 endif()
 
 if (USE_SIRIUS)
-	find_package(bib_solveur REQUIRED)
+	find_package(sirius_solver REQUIRED)
 endif()
 
 include(utilsRTE)
