@@ -35,7 +35,7 @@ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="install" -B Sirius/buil
 cmake --build Sirius/buildLinux/ --config Release --target install -j4
 
 ### Configuration et build + install d'ortools
-git clone https://github.com/rte-france/or-tools.git -b rte_dev_sirius or-tools
+git clone https://github.com/rte-france/or-tools.git -b unification_2020 or-tools
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="install" -B or-tools/buildLinux -S or-tools/ -DUSE_SIRIUS=ON -DUSE_COINOR=ON -DBUILD_PYTHON=OFF -DBUILD_TESTING=OFF -DBUILD_DEPS=ON 
 cmake --build or-tools/buildLinux/ --config Release --target install -j4
 
@@ -67,16 +67,16 @@ link gflags (cherche gflags_nothreads_static.lib sans le chemin, alors qu'il a d
 scl enable devtoolset-7 bash
 
 ### Clone du projet d'intégration
-git clone https://github.com/rte-france/ortools-integration.git -b evol-cmakes
+git clone https://github.com/rte-france/ortools-integration.git -b unification_2020
 cd ortools-integration
 
 ### Configuration et build + install de Sirius
-git clone https://github.com/rte-france/temp-pne.git -b metrix Sirius
+git clone https://github.com/rte-france/temp-pne.git -b unification_2020 Sirius
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="install" -B Sirius/buildWindows -S Sirius/src -G "Visual Studio 15 2017 Win64"
 cmake --build Sirius/buildWindows/ --config Release --target install -j4
 
 ### Configuration et build + install d'ortools
-git clone https://github.com/rte-france/or-tools.git -b rte_dev_sirius or-tools
+git clone https://github.com/rte-france/or-tools.git -b unification_2020 or-tools
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="install" -B or-tools/buildLinux -S or-tools/ -DUSE_SIRIUS=ON -DUSE_COINOR=ON -DBUILD_PYTHON=OFF -DBUILD_TESTING=OFF -DBUILD_DEPS=ON 
 cmake --build or-tools/buildLinux/ --config Release --target install -j4
 
